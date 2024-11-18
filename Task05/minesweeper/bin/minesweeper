@@ -1,0 +1,45 @@
+#!/usr/bin/env php
+<?php
+require __DIR__ . '/../vendor/autoload.php';
+
+use Kaymka\Minesweeper\Controller;
+use Kaymka\Minesweeper\Database;
+use Kaymka\Minesweeper\View;
+
+date_default_timezone_set('Europe/Moscow');
+
+$db = new Database();
+
+if (in_array('--list', $argv)) {
+    $games = $db->listGames();
+    View\showGamesList($games);
+    exit;
+}
+
+if (in_array('--replay', $argv)) {
+    $gameId = (int)\cli\prompt("Enter game ID to replay:");
+    $db->replayGame($gameId);
+    exit;
+}
+
+$width = $argv[1] ?? 10;
+$height = $argv[2] ?? 10;
+$mines = $argv[3] ?? 10;
+$saveToDatabase = in_array('--save', $argv);
+$gameId = null;
+$playerName = null;
+
+// Обработка загрузки игры и имени игрока
+foreach ($argv as $arg) {
+    if (preg_match('/^--load=(\d+)$/', $arg, $matches)) {
+        $gameId = (int)$matches[1];
+    } elseif (preg_match('/^--name=(.+)$/', $arg, $matches)) {
+        $playerName = $matches[1];
+    }
+}
+
+if (!$playerName) {
+    $playerName = \cli\prompt("Enter your name:");
+}
+
+Controller\startGame($width, $height, $mines, $saveToDatabase, $gameId, $playerName);
