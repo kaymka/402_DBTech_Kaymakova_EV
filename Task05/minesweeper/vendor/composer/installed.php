@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'kaymka/minesweeper',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '3ce269192bec0357b9f3143cda2cb0654b910b2a',
+        'type' => 'project',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'gabordemooij/redbean' => array(
+            'pretty_version' => 'v5.7.4',
+            'version' => '5.7.4.0',
+            'reference' => '274c426583d91b20a1e39968b2e20969ef83cd1d',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../gabordemooij/redbean',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'kaymka/minesweeper' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '3ce269192bec0357b9f3143cda2cb0654b910b2a',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'wp-cli/php-cli-tools' => array(
+            'pretty_version' => 'v0.12.1',
+            'version' => '0.12.1.0',
+            'reference' => 'd1fe500378f53fb5ae1072c0daa77095c384a082',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../wp-cli/php-cli-tools',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
