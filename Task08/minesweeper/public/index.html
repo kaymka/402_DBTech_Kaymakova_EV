@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Minesweeper</h2>
+<div>
+    <button id="view-past-games">View Past Games</button>
+    <button id="clear-db">Clear Database</button>
+    <button id="help">Help</button>
+    <ul id="game-list"></ul>
+</div>
+<div class="settings">
+    <label for="player-name">Player Name:</label>
+    <input type="text" id="player-name" placeholder="Enter your name" required>
+    <label for="width">Width:</label>
+    <input type="number" id="width" value="10" min="5" max="30">
+    <label for="height">Height:</label>
+    <input type="number" id="height" value="10" min="5" max="30">
+    <label for="mines">Mines:</label>
+    <input type="number" id="mines" value="10" min="1" max="100">
+    <button id="startBtn">New Game</button>
+</div>
+<div class="game-container">
+    <div id="game-board"></div>
+    <p id="game-status"></p>
+</div>
+<div id="replay-container" style="display: none;">
+    <h3>Replay Game</h3>
+    <ul id="replay-list"></ul>
+    <button id="close-replay">Close</button>
+</div>
+<div id="help-container" style="display: none;">
+    <h3>Справка</h3>
+    <p>
+        <strong>Доступные функции:</strong><br>
+        - <em>Новая игра:</em> Позволяет начать новую игру с заданными параметрами (ширина, высота и количество мин).<br>
+        - <em>Просмотр прошлых игр:</em> Открывает список всех сохранённых игр. Чтобы посмотреть реплей конкретной игры, нажмите на кнопку <strong>"View Past Games"</strong> и выберите интересующую игру из списка.<br>
+        - <em>Повтор игры (Replay):</em> Показывает пошаговую историю выбранной игры, включая информацию о каждом ходе (координаты и результат).<br>
+        - <em>Очистка базы данных:</em> Удаляет все сохранённые игры из базы данных.<br>
+    </p>
+    <p>
+        <strong>Как играть:</strong><br>
+        1. Введите ваше имя в поле "Player Name".<br>
+        2. Установите параметры игры (ширина, высота и количество мин).<br>
+        3. Нажмите кнопку "New Game", чтобы начать новую игру.<br>
+        4. Щёлкайте по ячейкам на игровом поле, чтобы открыть их. Если вы откроете ячейку с миной, игра закончится.<br>
+        5. Цель игры - открыть все ячейки без мин.<br>
+    </p>
+    <p>
+        <strong>Реплей игры:</strong><br>
+        Чтобы просмотреть повтор игры:<br>
+        6. Нажмите кнопку <strong>"View Past Games"</strong>.<br>
+        7. В появившемся списке выберите игру, кликнув на неё.<br>
+        8. Реплей игры будет отображён в отдельном окне, где вы сможете увидеть все шаги и результат.<br>
+    </p>
+    <button id="close-help">Закрыть</button>
+</div>
+<script src="https://unpkg.com/idb@7.0.0/build/umd.js"></script>
+<script type="module" src="./game.js"></script>
+</body>
+</html>
