@@ -1,0 +1,23 @@
+{
+    "name": "kaymka/minesweeper_web",
+    "description": "Minesweeper Server Version",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Kaymka\\MinesweeperWeb\\": "public/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Katya Kaymakova"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "slim/slim": "^4.14",
+        "slim/psr7": "^1.7",
+        "slim/http": "^0.4.0",
+        "guzzlehttp/psr7": "^2.7",
+        "nikic/fast-route": "^1.3"
+    }
+}

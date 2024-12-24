@@ -1,0 +1,88 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+h2 {
+    text-align: left;
+    color: #ff6347;
+}
+
+.settings {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    margin: 5px;
+    padding: 10px;
+    width: 80px;
+    border: 2px solid #ff6347;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+.game-container {
+    display: none;
+    text-align: left;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    gap: 2px;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ff6347;
+    background-color: #555;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.cell.revealed {
+    background-color: #444;
+}
+
+.cell.revealed.mine {
+    background-color: #ff4500;
+    color: #fff;
+}
+
+.cell.mine {
+    background-color: #ff4500;
+    color: transparent;
+}
